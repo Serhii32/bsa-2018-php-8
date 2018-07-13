@@ -11,6 +11,9 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+     <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
     <!-- Styles -->
     <style>
         html, body {
@@ -66,8 +69,15 @@
     </style>
 </head>
 <body>
+
     <div class="container">
+        @if(session('status')) <div class="alert alert-info">{{session('status')}}</div> @endif
+
+        <a style="font-weight: 600;" class="btn btn-success" href="{{route('currencies.create')}}">Add Currency</a>
+        <a style="font-weight: 600;" class="btn btn-info" href="{{route('currencies.index')}}">Currencies</a>
+        
         @yield('content')
     </div>
+    
 </body>
 </html>
